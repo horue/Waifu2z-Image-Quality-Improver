@@ -1,4 +1,5 @@
 from PIL import Image, ImageFilter
+import easygui
 import os
 
 def upscaling(take, upscale):
@@ -18,6 +19,6 @@ def upscaling(take, upscale):
     pp.save(f'{upscale}_2z_{fileName}')
 
 
-take = input('Image path: ')
+take = easygui.fileopenbox()
 upscale = float(input('Upscale how many times? '))
 upscaling(take, upscale)
