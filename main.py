@@ -14,7 +14,7 @@ def upscaling(take, upscale):
 
     fileName = os.path.basename(take)
 
-    resize.save(f'2z_{fileName}')
+    resize.save(f'{upscale}_2z_{fileName}')
 
 
 take = input('Image path: ')
