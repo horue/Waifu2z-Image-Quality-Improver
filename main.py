@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageFilter
 import os
 
 def upscaling(take, upscale):
@@ -10,11 +10,12 @@ def upscaling(take, upscale):
     up_h = int(im.height * upscale)
 
     resize = im.resize((up_w, up_h), Image.Resampling.LANCZOS)
+    pp = resize.filter(ImageFilter.EDGE_ENHANCE)
 
 
     fileName = os.path.basename(take)
 
-    resize.save(f'{upscale}_2z_{fileName}')
+    pp.save(f'{upscale}_2z_{fileName}')
 
 
 take = input('Image path: ')
