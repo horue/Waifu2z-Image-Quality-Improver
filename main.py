@@ -2,9 +2,9 @@ from PIL import Image, ImageFilter
 import easygui
 import os
 
-def upscaling(take, upscale, save):
+def upscaling(imagePath, upscale):
 
-    im = Image.open(take)
+    im = Image.open(imagePath)
 
 
     up_w = int(im.width * upscale)
@@ -12,14 +12,15 @@ def upscaling(take, upscale, save):
 
     resize = im.resize((up_w, up_h), Image.Resampling.LANCZOS)
     pp = resize.filter(ImageFilter.EDGE_ENHANCE)
+    pp2 = pp.filter(ImageFilter.DETAIL)
+    pp3 = pp2.filter(ImageFilter.SMOOTH_MORE)
 
 
-    fileName = os.path.basename(take)
+    fileName = os.path.basename(imagePath)
 
-    pp.save(f'{save}'f'{upscale}_2z_{fileName}')
+    pp3.save(f'{upscale}_2z_{fileName}')
 
 
-take = easygui.fileopenbox()
+imagePath = easygui.fileopenbox()
 upscale = float(input('Upscale how many times? '))
-save = easygui.diropenbox()
-upscaling(take, upscale)
+upscaling(imagePath, upscale)
