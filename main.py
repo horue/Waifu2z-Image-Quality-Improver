@@ -11,7 +11,7 @@ def upscaling(take, upscale):
     resize = im.resize((up_w, up_h), Image.Resampling.LANCZOS)
 
 
-    resize.save(f'2z_{im.name}')
+    resize.save(f'2z_{take}')
 
 
 take = input('Image path: ')
