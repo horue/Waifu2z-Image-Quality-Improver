@@ -1,4 +1,5 @@
 from PIL import Image
+import os
 
 def upscaling(take, upscale):
 
@@ -11,9 +12,11 @@ def upscaling(take, upscale):
     resize = im.resize((up_w, up_h), Image.Resampling.LANCZOS)
 
 
-    resize.save(f'2z_{take}')
+    fileName = os.path.basename(take)
+
+    resize.save(f'2z_{fileName}')
 
 
 take = input('Image path: ')
-upscale = int(input('Upscale how many times? '))
+upscale = float(input('Upscale how many times? '))
 upscaling(take, upscale)
