@@ -21,6 +21,8 @@ def upscaling(imagePath, upscale):
     pp3 = pp2.filter(ImageFilter.SMOOTH_MORE)
 
 
+
+
     fileName = os.path.basename(imagePath)
 
     pp3.save(f'{upscale}_2z_{fileName}')
