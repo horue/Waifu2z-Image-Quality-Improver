@@ -1,4 +1,4 @@
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageEnhance
 import easygui
 import os
 
@@ -11,7 +11,10 @@ def upscaling(imagePath, upscale):
     up_h = int(im.height * upscale)
 
     resize = im.resize((up_w, up_h), Image.Resampling.LANCZOS)
-    pp = resize.filter(ImageFilter.EDGE_ENHANCE)
+
+    sharp = ImageEnhance.Sharpness(resize)
+
+    pp = sharp.enhance(upscale)
     pp2 = pp.filter(ImageFilter.DETAIL)
     pp3 = pp2.filter(ImageFilter.SMOOTH_MORE)
 
