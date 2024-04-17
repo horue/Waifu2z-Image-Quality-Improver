@@ -13,8 +13,10 @@ def upscaling(imagePath, upscale):
     resize = im.resize((up_w, up_h), Image.Resampling.LANCZOS)
 
     sharp = ImageEnhance.Sharpness(resize)
-
-    pp = sharp.enhance(7.0)
+    if upscale < 4:
+        pp = sharp.enhance(7.0)
+    elif upscale <= 10:
+        pp = sharp.enhance(10.0)
     pp2 = pp.filter(ImageFilter.DETAIL)
     pp3 = pp2.filter(ImageFilter.SMOOTH_MORE)
 
