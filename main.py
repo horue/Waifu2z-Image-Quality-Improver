@@ -16,7 +16,7 @@ def upscaling(imagePath, upscale):
     if upscale < 4:
         pp = sharp.enhance(7.0)
     elif upscale <= 10:
-        pp = sharp.enhance(10.0)
+        pp = sharp.enhance(7.0 * (upscale/2))
     pp2 = pp.filter(ImageFilter.DETAIL)
     pp3 = pp2.filter(ImageFilter.SMOOTH_MORE)
 
