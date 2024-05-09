@@ -19,6 +19,8 @@ def upscaling(imagePath, upscale):
         pp = sharp.enhance(7.0 * (upscale/2))
     pp2 = pp.filter(ImageFilter.DETAIL)
     pp3 = pp2.filter(ImageFilter.SMOOTH_MORE)
+    pp3 = ImageEnhance.Contrast(pp3).enhance(1.2)
+
 
 
 
