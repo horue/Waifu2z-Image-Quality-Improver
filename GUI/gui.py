@@ -5,7 +5,7 @@ def initial(root):
 
 def main():
     root = ct.CTk()
-    root.geometry("650x700")
+    root.geometry("650x400")
     root.title("Waifu2z - Image Quality Improver")
     root.after(1, lambda :root.iconbitmap(''))
 
