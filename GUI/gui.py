@@ -1,4 +1,6 @@
 import customtkinter as ct
+from improver import upscaling
+
 
 def initial(root):
     l1 = ct.CTkLabel(root, text="Waifu2z - Image Quality Improver")
