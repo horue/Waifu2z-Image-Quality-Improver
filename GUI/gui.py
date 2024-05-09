@@ -1,7 +1,8 @@
 import customtkinter as ct
 
 def initial(root):
-    print('')
+    l1 = ct.CTkLabel(root, text="Waifu2z - Image Quality Improver")
+    l1.pack(pady=20)
 
 def main():
     root = ct.CTk()
