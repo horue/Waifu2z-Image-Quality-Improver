@@ -11,6 +11,9 @@ def initial(root):
     l2 = ct.CTkLabel(root, text='', image='')
     l2.pack()
 
+    b1 = ct.CTkButton(root, text='Select image')
+    b1.pack(pady=10)
+
 
 def main():
     root = ct.CTk()
