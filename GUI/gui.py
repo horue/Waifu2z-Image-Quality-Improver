@@ -1,6 +1,12 @@
 import customtkinter as ct
 from improver import upscaling
+from customtkinter import filedialog    
 
+
+
+def select():
+    path = filedialog.askopenfile().name
+    print(path)
 
 def initial(root):
     l1 = ct.CTkLabel(root, text="Waifu2z - Image Quality Improver")
@@ -13,7 +19,7 @@ def initial(root):
     l2 = ct.CTkLabel(root, text='', image='')
     l2.pack()
 
-    b1 = ct.CTkButton(root, text='Select image')
+    b1 = ct.CTkButton(root, text='Select image', command=lambda:select())
     b1.pack(pady=10)
 
 
