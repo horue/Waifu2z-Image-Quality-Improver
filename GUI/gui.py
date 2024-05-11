@@ -17,6 +17,12 @@ def initial(root):
     c1 = ct.CTkCheckBox(root, text='Color improvement', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var, onvalue='on', offvalue='off')
     c1.pack(pady=10)
 
+    l2 = ct.CTkLabel(root, text='Upscaling factor: ')
+    l2.pack()
+
+    e1 = ct.CTkEntry(root)
+    e1.pack(pady=10)
+
     l2 = ct.CTkLabel(root, text='Selected Image: None')
     l2.pack()
 
