@@ -5,7 +5,7 @@ def messagebox(title='Aviso'):
     message_box.geometry('320x150')
     message_box.title(title)
     message_box.resizable(False, False)
-    message_box.attributes('-toolwindow', True)
+    message_box.attributes('-toolwindow', True, '-topmost', True)
 
     b1 = ct.CTkButton(message_box, text='Ok', command=message_box.destroy)
     b1.pack()
