@@ -5,6 +5,7 @@ from customtkinter import filedialog
 
 
 def select(l2):
+    global path
     path = filedialog.askopenfile().name
     l2.configure(text=f'Selected file: {path}')
 
