@@ -4,9 +4,10 @@ from customtkinter import filedialog
 
 
 
-def select():
+def select(l2):
     path = filedialog.askopenfile().name
-    print(path)
+    l2.configure(text=f'Selected file: {path}')
+
 
 def initial(root):
     l1 = ct.CTkLabel(root, text="Waifu2z - Image Quality Improver")
@@ -16,10 +17,10 @@ def initial(root):
     c1 = ct.CTkCheckBox(root, text='Color improvement', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var, onvalue='on', offvalue='off')
     c1.pack(pady=10)
 
-    l2 = ct.CTkLabel(root, text='', image='')
+    l2 = ct.CTkLabel(root, text='Selected Image: None')
     l2.pack()
 
-    b1 = ct.CTkButton(root, text='Select image', command=lambda:select())
+    b1 = ct.CTkButton(root, text='Select image', command=lambda:select(l2))
     b1.pack(pady=10)
 
 
