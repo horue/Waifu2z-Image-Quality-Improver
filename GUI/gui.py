@@ -1,6 +1,6 @@
 import customtkinter as ct
 from improver import upscaling
-from customtkinter import filedialog    
+from customtkinter import filedialog   
 
 
 
@@ -21,7 +21,7 @@ def initial(root):
     l2 = ct.CTkLabel(root, text='Upscaling factor: ')
     l2.pack()
 
-    e1 = ct.CTkEntry(root)
+    e1 = ct.CTkEntry(root, width=30)
     e1.pack(pady=10)
 
     l2 = ct.CTkLabel(root, text='Selected Image: None')
