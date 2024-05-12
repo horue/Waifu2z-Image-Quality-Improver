@@ -30,6 +30,8 @@ def initial(root):
     b1 = ct.CTkButton(root, text='Select image', command=lambda:select(l2))
     b1.pack(pady=10)
 
+    b2 = ct.CTkButton(root, text='Upscale', command=lambda:upscaling(imagePath=path, upscale=float(e1.get())))
+    b2.pack()
 
 def main():
     root = ct.CTk()
