@@ -26,4 +26,4 @@ def upscaling(imagePath, upscale):
 
     fileName = os.path.basename(imagePath)
 
-    pp3.save(f'{upscale}_2z_{fileName}')
+    pp3.save(f'{upscale}_2z_{fileName}.png')
