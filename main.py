@@ -2,7 +2,7 @@ from PIL import Image, ImageFilter, ImageEnhance
 import easygui
 import os
 
-def upscaling(imagePath, upscale):
+def upscaling(imagePath, upscale=2):
 
     im = Image.open(imagePath)
 
