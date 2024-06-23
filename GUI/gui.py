@@ -3,7 +3,6 @@ from improver import upscaling
 from customtkinter import filedialog   
 
 
-
 def select(l2):
     global path
     path = filedialog.askopenfile().name
@@ -17,6 +16,10 @@ def initial(root):
     check_var = ct.StringVar(value='off')
     c1 = ct.CTkCheckBox(root, text='Color improvement', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var, onvalue='on', offvalue='off')
     c1.pack(pady=10)
+
+    check_var2 = ct.StringVar(value='off')
+    c2 = ct.CTkCheckBox(root, text='AI Upscaling', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var2, onvalue='on', offvalue='off')
+    c2.pack()
 
     l2 = ct.CTkLabel(root, text='Upscaling factor: ')
     l2.pack()
