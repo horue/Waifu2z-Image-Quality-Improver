@@ -17,8 +17,8 @@ def initial(root):
     c1 = ct.CTkCheckBox(root, text='Color improvement', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var, onvalue='on', offvalue='off')
     c1.pack(pady=10)
 
-    check_var2 = ct.StringVar(value='off')
-    c2 = ct.CTkCheckBox(root, text='AI Upscaling', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var2, onvalue='on', offvalue='off')
+    check_var2 = ct.StringVar(value=False)
+    c2 = ct.CTkCheckBox(root, text='Quadrant Upscaling', checkbox_width=15, checkbox_height=15, corner_radius=0, border_width=2, variable=check_var2, onvalue=True, offvalue=False)
     c2.pack()
 
     l2 = ct.CTkLabel(root, text='Upscaling factor: ')
@@ -33,7 +33,7 @@ def initial(root):
     b1 = ct.CTkButton(root, text='Select image', command=lambda:select(l2))
     b1.pack(pady=10)
 
-    b2 = ct.CTkButton(root, text='Upscale', command=lambda:upscaling(imagePath=path, upscale=float(e1.get())))
+    b2 = ct.CTkButton(root, text='Upscale', command=lambda:upscaling(imagePath=path, upscale=float(e1.get()), q=check_var2.get()))
     b2.pack()
 
 def main():
